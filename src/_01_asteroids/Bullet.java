@@ -18,21 +18,21 @@ public class Bullet implements ActionListener {
 	Rectangle coll;
 	Timer timer;
 	boolean isAlive = true;
-	
+
 	public Bullet(int x, int y, double angle) {
 		this.x = x;
 		this.y = y;
 		this.angle = angle;
-		
+
 		coll = new Rectangle(x - size / 2, y - size / 2, size, size);
 		timer = new Timer(1000, this);
 		timer.start();
 	}
-	
+
 	public void update() {
-		x += (Math.cos(Math.toRadians(angle)))*speed;
-		y += (Math.sin(Math.toRadians(angle)))*speed;
-		
+		x += (Math.cos(Math.toRadians(angle))) * speed;
+		y += (Math.sin(Math.toRadians(angle))) * speed;
+
 		if (x < 0)
 			x = AsteroidsGame.WIDTH;
 		if (x > AsteroidsGame.WIDTH)
@@ -43,7 +43,7 @@ public class Bullet implements ActionListener {
 			y = 0;
 		coll.setLocation(x - size / 2, y - size / 2);
 	}
-	
+
 	public void draw(Graphics g) {
 		Graphics2D graphics2D = (Graphics2D) g;
 		graphics2D.rotate(Math.toRadians(angle), x, y);
