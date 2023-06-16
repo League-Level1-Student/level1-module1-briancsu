@@ -3,7 +3,7 @@ package _07_duck;
 public class Duck {
 	int numberOfFriends;
 	String favoriteFriends;
-	public void Duck(String favoriteFood, int numberOfFriends) {
+	public Duck(String favoriteFood, int numberOfFriends) {
 		// TODO Auto-generated constructor stub
 	}
 	void quack() {
